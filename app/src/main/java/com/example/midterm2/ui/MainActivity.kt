@@ -1,6 +1,5 @@
 package com.example.midterm2.ui
 
-import android.graphics.Color
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,6 +15,7 @@ import androidx.compose.runtime.*
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.example.midterm2.model.UserModel
@@ -40,11 +40,12 @@ fun TopPart() {
     Surface(
         modifier = Modifier
             .fillMaxWidth()
-            .height(50.dp),
+            .height(70.dp),
     ) {
         Text(
             text = "USERS",
             fontWeight = FontWeight.Bold,
+            style = MaterialTheme.typography.h2
         )
     }
 }
@@ -64,7 +65,10 @@ fun UserList(mainViewModel: MainViewModel) {
 fun UserItem(user: UserModel) {
     Row(
         modifier = Modifier
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .padding(5.dp)
+            .border(0.5.dp, Color.Black)
+            .padding(10.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Column {
